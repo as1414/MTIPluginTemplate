@@ -1,0 +1,11 @@
+GIT Instructions for MTI
+
+Sign into GitHub and create repo
+
+echo "# [REPO_NAME_HERE]" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/as1414/FilmHub.git
+git push -u origin main

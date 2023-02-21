@@ -1,0 +1,57 @@
+input[type='checkbox'],
+input[type='radio'] {
+	margin: -4px 8px 0 0;
+}
+input,
+select {
+	margin: 1px 1px 1px 0;
+}
+.form-table th {
+	padding: 10px 10px 10px 0;
+	width: 150px;
+}
+.form-table td {
+	padding: 5px 10px;
+}
+.form-table td p {
+	margin-bottom: 6px;
+}
+.wrap h1 {
+	padding: 9px 0;
+}
+.mti_admin_links {
+	float: right;
+	margin: 15px 50px 15px 0;
+	vertical-align: middle;
+}
+.mti_sizes input {
+	float: left;
+	width: 35px;
+	text-align: center;
+}
+.mti_sizes p.description {
+	float: left;
+	margin-left: 10px;
+}
+.mti_help_tip::after {
+	font-family: dashicons;
+	content: '\f223';
+	float: right;
+	vertical-align: middle;
+	font-weight: normal;
+}
+.mti_help_tip span {
+	display: none;
+	position: absolute;
+	left: 162px;
+	margin-top: 7px;
+	padding: 7px;
+	box-sizing: border-box;
+	border: 2px #de930a solid;
+	background-color: #fff6b4;
+	font-size: 13px;
+	font-weight: normal;
+}
+.mti_help_tip:hover :nth-child(1) {
+	display: block;
+}

@@ -1,0 +1,45 @@
+<?php
+
+// add sections and tabs to mti settings pages
+add_filter('mti_build_settings_sections', function ($sections) {
+
+    $sections['configuration2'] = ['section_title' => 'configuration2', 'tab_title' => __('General', MTI_SLUG)];
+    $sections['configuration3'] = ['section_title' => 'configuration3', 'tab_title' => __('General3', MTI_SLUG)];
+
+    return $sections;
+});
+
+// add setting objects to tabs and pages
+add_filter('mti_build_setting_objects', function ($settings) {
+
+    $more_settings = array(
+        'archive_ajax_update_delay2'         => [
+            'val' => 1000,     'title' => __('Update delay', MTI_SLUG),             'type' => 'number',     'tab' => 'configuration2',
+            'descr' => __('Time (in miliseconds) between the last quantity change and sending the request to update the quantity on the archive page.'),
+            // on server (a spinning wheel is displayed when this happens). Allows changing the quantity multiple times with only one server request done in the end. Low values will result in the spinning wheel showing more than once when the changes are slow. High values will make the customers wait and wonder why the cart doesn\'t recalculate. How long the spinning wheel is displayed, is based entirely on the server response time.', MTI_SLUG)
+        ],
+        'cart_ajax_update_delay2'         => [
+            'val' => 1000,     'title' => __('Update delay', MTI_SLUG),             'type' => 'number',     'tab' => 'configuration2',
+            'descr' => __('Time (in miliseconds) between the last quantity change and sending the request to update the quantity on the archive page.'),
+            // on server (a spinning wheel is displayed when this happens). Allows changing the quantity multiple times with only one server request done in the end. Low values will result in the spinning wheel showing more than once when the changes are slow. High values will make the customers wait and wonder why the cart doesn\'t recalculate. How long the spinning wheel is displayed, is based entirely on the server response time.', MTI_SLUG)
+        ],
+        'allow_zero_qty2'         => [
+            'val' => true,     'title' => __('Allow Zero Quantity', MTI_SLUG),     'type' => 'checkbox',     'tab' => 'configuration3',
+            'descr' => __('This will allow products to have a zero quantity option when changing them in the archives and cart (to remove them automatically.  If unchecked, an item\'s step value will be used as a minimum unless it is specified on the product. NOTE: if you enter a minimum quantity for a product, it will not be able to be automatically deleted using a zero quantity option.', MTI_SLUG)
+        ],
+        'cart_notices_off2'     => [
+            'val' => false,     'title' => __('Cart page notices', MTI_SLUG),         'type' => 'checkbox',     'tab' => 'configuration3',
+            'descr' => __('Turn off notices on cart page, including "Cart updated." and "&lt;Product&gt; removed. Undo?". Empty cart message will still be displayed.', MTI_SLUG)
+        ],
+        'custom_css2'     => [
+            'val' => false,     'title' => __('Custom CSS', MTI_SLUG),         'type' => 'textarea',     'tab' => 'configuration3',
+            'descr' => __('Turn off notices on cart page, including "Cart updated." and "&lt;Product&gt; removed. Undo?". Empty cart message will still be displayed.', MTI_SLUG)
+        ],
+        'spinning_wheel_color2' => [
+            'val' => '#000000', 'title' => __('Cart spinning wheel color', MTI_SLUG),     'type' => 'color',         'tab' => 'configuration3',
+            'descr' => __('The color of the small spinning "loading" wheel that appears during the ajax call.', MTI_SLUG),
+        ],
+    );
+
+    return array_merge($settings, $more_settings);
+});

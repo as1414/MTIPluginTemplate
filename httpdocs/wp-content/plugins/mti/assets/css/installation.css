@@ -1,0 +1,19 @@
+#mti_notice_container {
+	padding: 0 5px;
+	background: #fff6de;
+	border: 1px solid;
+	border-color: #2fb53b;
+	box-shadow: none;
+}
+#mti_notice_span {
+	white-space: nowrap;
+	font-size: 10px;
+}
+@media (min-width: 768px) {
+	#mti_notice_span {
+		float: right;
+	}
+	#mti_notice_container {
+		padding: 0 12px;
+	}
+}
